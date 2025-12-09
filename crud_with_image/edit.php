@@ -35,9 +35,7 @@ if(isset($_POST['submit'])){
 
     $query = mysqli_query($conn, $select);
     $fetchAllData = mysqli_fetch_array($query);
-    $getfile = $fetchAllData['file']; //উপরে $_GET(global variable) এর $getfile variable এখানে copy করে বসিয়েছি না হলে কাজ করবে না
-    unlink("poto/".$getfile); //unlink এর মাধ্যমে student_cv table এর id থেকে delete করেছি & directory থেকেও Delete করেছি ;
-
+    unlink("poto/".$fetchData['file']);// ছবিটাকে ডিরেক্টরি থেক ডিলেট করতে চাচ্ছি
 
     $inputName = $_POST['name'];
     $inputEmail = $_POST['email'];
