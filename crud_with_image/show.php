@@ -1,3 +1,4 @@
+<!-- html এর স্ট্রাকচারটা নিয়েছি শুধু js এর কোড লেখার জন্য, একটা function নিতে হবে যাতে ডিলেট করার সময় confirm box আসে -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
 <?php
 
 
-include 'connection.php';
+include 'connection.php'; //connection.php ফাইলের সাথে কানেক্ট করেছি
 
 $select = "SELECT * FROM student_cv"; //student_cv table এর সকল ডাটা select করেছি
 $query = mysqli_query($conn, $select); //select করা ডাটা গুলো query করেছি
