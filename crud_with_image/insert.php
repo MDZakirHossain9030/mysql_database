@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-//super global 
+//super global variable = $_POST, $_GET etc;
 //submit এর মধ্যে ক্লিক করলে নিচের html form input থেকে আনা value গুলো কাজ করবে
 if(isset($_POST['submit'])){ 
 
@@ -13,10 +13,10 @@ if(isset($_POST['submit'])){
 
 
     // html form থেকে image name এনে variable এর মধ্যে রেখেছি
-    $filename = $_FILES["upfile"]["name"];
-    $tmpname = $_FILES["upfile"]["tmp_name"];
+    $filename = $_FILES["upfile"]["name"]; //fle er নাম
+    $tmpname = $_FILES["upfile"]["tmp_name"]; //file er টেম্পরারী নাম
     
-    $type = $_FILES["upfile"]["type"]; //file টা কোন টাইপের
+    $type = $_FILES["upfile"]["type"]; //file টা কোন টাইপের//image/png
     $size = $_FILES["upfile"]["size"]; //file এর সাইজ কত
 
     $dirFileConn = 'poto/'.$filename; //directory এর সাথে filename connect করেছি
@@ -46,7 +46,7 @@ VALUES ('$inputName', '$inputEmail', '$inputPassword', '$inputAddress', '$filena
 
     $query = mysqli_query($conn, $insert);
     if($query){
-        header('location:show.php');//data insertহওয়ার পরে show.php file এ আমাদের নিয়ে যাবে
+        header('location:show.php'); //data insertহওয়ার পরে show.php file এ আমাদের নিয়ে যাবে
     }else{
         echo "Data Not Inserted";
     }
