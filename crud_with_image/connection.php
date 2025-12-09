@@ -8,7 +8,7 @@ $username = "root";
 $password = "12345";
 $dbname = "student_details";
 
-// database er sathe connection
+// database er sathe connection korechi
 $conn = mysqli_connect($hostname, $username, $password, $dbname);
 
 
