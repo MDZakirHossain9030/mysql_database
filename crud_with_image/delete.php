@@ -7,11 +7,11 @@ if(isset($_GET['deleteid'])){ //Delete এ ক্লিক করলে নি�
 // show.php থেকে যে id টা পাঠানো হয়েছে সেটা এখানে রিসিভ করেছি
     $deleteid = $_GET['deleteid']; 
 
-    $select = "SELECT * FROM student_cv WHERE id=$deleteid";//যেই id টা এসেছে সেই id এর সকল ডাটা(row) সিলিক্ট করেছি
+    $select = "SELECT * FROM student_cv WHERE id=$deleteid"; //যেই id টা এসেছে শুধু সেই id এর সকল ডাটা(row) সিলিক্ট করেছি
 
     $query = mysqli_query($conn, $select); //select করা row এর ডাটাকে query করেছি 
 
-    $getAllData = mysqli_fetch_array($query); //query করা(select করা) সকল ডাটাকে array আকারে করেছি
+    $getAllData = mysqli_fetch_array($query); //যেই id এর সকল ডাটা select করেছি সেই id এর সকল ডাটাকে array আকারে করে নিয়েছি
     unlink("poto/".$getAllData['file']); //unlink এর মাধ্যমে student_cv table এর id থেকে delete করেছি & directory থেকেও Delete করেছি ;
 
 
